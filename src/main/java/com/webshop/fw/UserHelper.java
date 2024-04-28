@@ -4,6 +4,8 @@ import com.webshop.models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.Random;
+
 public class UserHelper extends BaseHelper{
 
 
@@ -25,10 +27,11 @@ public class UserHelper extends BaseHelper{
     }
 
     public void fillRegisterForm(User user) {
-
+        Random random = new Random();
+        int i = random.nextInt(1000) + 1000;
         type(By.id("FirstName"), user.getFirstName());
         type(By.id("LastName"), user.getLastName());
-        type(By.id("Email"), user.getEmail());
+        type(By.id("Email"),i + user.getEmail());
         type(By.id("Password"), user.getPassword());
         type(By.id("ConfirmPassword"), user.getConfirm_pass());
     }

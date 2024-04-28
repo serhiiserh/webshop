@@ -28,16 +28,7 @@ public class TestBase {
         app.init();
     }
 
-    @AfterMethod
-    public void stopTest(ITestResult result) {
-        if(result.isSuccess()){
-            logger.info("PASSED" + result.getMethod().getMethodName());
-        }else{
-            logger.error("FAILED" + result.getMethod().getMethodName() + "screenshot: " + app.getUser().takeScreenshot());
-        }
-        logger.info("Stop test");
 
-    }
 
     @AfterSuite()
     public void tearDown() {

@@ -10,7 +10,7 @@ public class AddItemToCartTest extends TestBase {
 
     @BeforeMethod
     public void loginToAccount() {
-        if (!app.getUser().isLoginLinkPresent()) {
+        if (app.getUser().isLoginLinkPresent()) {
             app.getUser().clickOnSignOutButton();
         }
         app.getUser().clickOnLoginLink();

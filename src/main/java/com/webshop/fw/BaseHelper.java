@@ -38,17 +38,6 @@ public class BaseHelper {
         }
     }
 
-    public String takeScreenshot(){
-        File tmp = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File screenshot = new File("screenshots/screen-" + System.currentTimeMillis() + ".png");
-
-        try {
-            Files.copy(tmp,screenshot);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        return screenshot.getAbsolutePath();
-    }
 
 
 }

@@ -1,8 +1,5 @@
 package com.webshop.models;
 
-
-
-
 public class Item {
     private String title;
     private String rating;

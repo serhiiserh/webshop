@@ -8,7 +8,7 @@ public class LoginTest extends TestBase{
 
     @BeforeMethod
     public void ensurePrecondition() {
-        if (!app.getUser().isLoginLinkPresent()) {
+        if (app.getUser().isLoginLinkPresent()) {
             app.getUser().clickOnSignOutButton();
         }
     }

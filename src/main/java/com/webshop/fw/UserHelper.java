@@ -42,7 +42,7 @@ public class UserHelper extends BaseHelper{
     }
 
     public boolean isLoginLinkPresent() {
-        return isElementPresent(By.cssSelector("[href='/login']"));
+        return !isElementPresent(By.cssSelector("[href='/login']"));
     }
 
     public boolean isContinueLinkPresent() {

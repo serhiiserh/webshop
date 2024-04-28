@@ -1,6 +1,5 @@
 package com.webshop.fw;
 
-import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -11,10 +10,8 @@ import java.time.Duration;
 public class ApplicationManager {
     static WebDriver driver;
     String browser;
-    @Getter
     UserHelper user;
 
-    @Getter
     AddItemToCartHelper item;
 
     public ApplicationManager(String browser) {
@@ -37,6 +34,14 @@ public class ApplicationManager {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         user = new UserHelper(driver);
         item = new AddItemToCartHelper(driver);
+    }
+
+    public UserHelper getUser() {
+        return user;
+    }
+
+    public AddItemToCartHelper getItem(){
+        return item;
     }
 
     public void stop() {
